@@ -5,6 +5,8 @@ import { Footer } from './Footer';
 
 export const Layout: React.FC = () => {
   const { pathname } = useLocation();
+  // Home page renders its own footer as the last full-page section
+  const isHome = /^\/[a-z]{2}\/?$/.test(pathname);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -16,7 +18,7 @@ export const Layout: React.FC = () => {
       <div className="flex-1">
         <Outlet />
       </div>
-      <Footer />
+      {!isHome && <Footer />}
     </div>
   );
 };

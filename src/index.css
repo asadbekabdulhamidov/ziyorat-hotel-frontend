@@ -34,6 +34,14 @@
   background: #0F2F20;
 }
 
+/* Full-page sections: scroll inside tall sections without a visible bar */
+.fp-slide {
+  scrollbar-width: none;
+}
+.fp-slide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {

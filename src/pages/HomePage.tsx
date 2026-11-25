@@ -6,7 +6,9 @@ import { SEO } from '../components/seo/SEO';
 import { HeroSection } from '../components/sections/HeroSection';
 import { BookingSearch } from '../components/booking/BookingSearch';
 import { ArrowRight, Waves, Utensils, Sparkles, Dumbbell, CheckCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Footer } from '../components/layout/Footer';
+import { FullPage } from '../components/fullpage/FullPage';
+import { Stagger, Group, Item } from '../components/fullpage/Reveal';
 
 export const HomePage: React.FC = () => {
   const { t } = useTranslation();
@@ -40,8 +42,17 @@ export const HomePage: React.FC = () => {
     }
   ];
 
+  const sectionLabels = [
+    t('nav.home'),
+    t('nav.rooms'),
+    t('nav.experiences'),
+    t('nav.about'),
+    t('nav.discover'),
+    t('nav.contact'),
+  ];
+
   return (
-    <div>
+    <>
       <SEO
         title={t('hero.headline')}
         description={t('hero.subheadline')}
@@ -49,47 +60,49 @@ export const HomePage: React.FC = () => {
         path="/"
       />
 
-      {/* 1. Hero Section */}
-      <HeroSection />
-
-      {/* 2. Booking Search Bar */}
-      <div id="booking-search" className="max-w-6xl mx-auto px-6 -mt-10 relative z-20">
+      <FullPage labels={sectionLabels}>
+      {/* 1. Hero Section (with booking search) */}
+      <HeroSection>
         <BookingSearch />
-      </div>
+      </HeroSection>
 
-      {/* 3. Featured Rooms Section (Editorial Layout) */}
-      <section className="py-24 bg-[#F5F1E8]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+
+      {/* 2. Featured Rooms Section */}
+      <section className="min-h-screen flex items-center py-24 lg:pt-28 lg:pb-14 bg-[#F5F1E8]">
+        <Stagger className="w-full max-w-7xl mx-auto px-6 sm:px-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 lg:mb-10 gap-6">
             <div>
-              <p className="text-xs uppercase tracking-widest3 text-[#B99A65] font-sans font-semibold mb-2">
-                {t('featuredRooms.tag')}
-              </p>
-              <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#20251F]">
-                {t('featuredRooms.title')}
-              </h2>
+              <Item>
+                <p className="text-xs uppercase tracking-widest3 text-[#B99A65] font-sans font-semibold mb-2">
+                  {t('featuredRooms.tag')}
+                </p>
+              </Item>
+              <Item>
+                <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#20251F]">
+                  {t('featuredRooms.title')}
+                </h2>
+              </Item>
             </div>
-            <Link
-              to={`/${lang}/rooms`}
-              className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-sans font-semibold text-[#153D2A] hover:text-[#B99A65] border-b border-[#153D2A] pb-1 transition-colors self-start md:self-auto"
-            >
-              <span>{t('featuredRooms.viewAll')}</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+            <Item from="left">
+              <Link
+                to={`/${lang}/rooms`}
+                className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-sans font-semibold text-[#153D2A] hover:text-[#B99A65] border-b border-[#153D2A] pb-1 transition-colors self-start md:self-auto"
+              >
+                <span>{t('featuredRooms.viewAll')}</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </Item>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {ZIYORAT_ROOMS.slice(0, 3).map((room, idx) => (
-              <motion.div
+          <Group className="grid grid-cols-1 md:grid-cols-3 gap-8" stagger={0.18}>
+            {ZIYORAT_ROOMS.slice(0, 3).map((room) => (
+              <Item
                 key={room.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="bg-white border border-[#B99A65]/20 rounded-sm overflow-hidden flex flex-col group shadow-sm hover:shadow-xl transition-all duration-300"
+                distance={60}
+                className="bg-white border border-[#B99A65]/20 rounded-sm overflow-hidden flex flex-col group shadow-sm hover:shadow-xl transition-shadow duration-300"
               >
                 {/* Photo */}
-                <div className="relative h-64 sm:h-72 overflow-hidden bg-[#153D2A]/10">
+                <div className="relative h-64 sm:h-72 lg:h-[30vh] overflow-hidden bg-[#153D2A]/10">
                   <img
                     src={room.image}
                     alt={room.name[currentLang]}
@@ -102,7 +115,7 @@ export const HomePage: React.FC = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
+                <div className="p-6 sm:p-7 lg:p-6 flex-1 flex flex-col justify-between space-y-4 lg:space-y-3">
                   <div className="space-y-2">
                     <h3 className="font-serif text-2xl font-normal text-[#20251F] group-hover:text-[#153D2A] transition-colors">
                       {room.name[currentLang]}
@@ -137,36 +150,43 @@ export const HomePage: React.FC = () => {
                     </Link>
                   </div>
                 </div>
-              </motion.div>
+              </Item>
             ))}
-          </div>
-        </div>
+          </Group>
+        </Stagger>
       </section>
 
-      {/* 4. Hotel Experiences & Amenities */}
-      <section className="py-24 bg-[#0F2F20] text-[#F5F1E8] relative">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <p className="text-xs uppercase tracking-widest3 text-[#B99A65] font-sans font-semibold mb-2">
-              {t('experiences.tag')}
-            </p>
-            <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#F5F1E8]">
-              {t('experiences.title')}
-            </h2>
-            <p className="text-xs sm:text-sm text-[#B9CBBF] mt-3 font-light leading-relaxed">
-              {t('experiences.subtitle')}
-            </p>
+      {/* 3. Hotel Experiences & Amenities */}
+      <section className="min-h-screen flex items-center py-24 lg:pt-28 lg:pb-14 bg-[#0F2F20] text-[#F5F1E8] relative">
+        <Stagger className="w-full max-w-7xl mx-auto px-6 sm:px-10">
+          <div className="text-center max-w-2xl mx-auto mb-14 lg:mb-10">
+            <Item>
+              <p className="text-xs uppercase tracking-widest3 text-[#B99A65] font-sans font-semibold mb-2">
+                {t('experiences.tag')}
+              </p>
+            </Item>
+            <Item>
+              <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#F5F1E8]">
+                {t('experiences.title')}
+              </h2>
+            </Item>
+            <Item>
+              <p className="text-xs sm:text-sm text-[#B9CBBF] mt-3 font-light leading-relaxed">
+                {t('experiences.subtitle')}
+              </p>
+            </Item>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Group className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" stagger={0.15}>
             {experiencesList.map((exp, idx) => {
               const Icon = exp.icon;
               return (
-                <div
+                <Item
                   key={idx}
+                  distance={60}
                   className="bg-[#153D2A] border border-[#B99A65]/20 rounded-sm overflow-hidden flex flex-col group"
                 >
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-48 lg:h-[26vh] overflow-hidden">
                     <img
                       src={exp.image}
                       alt={exp.title}
@@ -188,12 +208,12 @@ export const HomePage: React.FC = () => {
                       </p>
                     </div>
                   </div>
-                </div>
+                </Item>
               );
             })}
-          </div>
+          </Group>
 
-          <div className="mt-12 text-center">
+          <Item className="mt-12 lg:mt-10 text-center">
             <Link
               to={`/${lang}/experiences`}
               className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-sans font-semibold text-[#B99A65] hover:text-[#D6C097] border-b border-[#B99A65] pb-1 transition-colors"
@@ -201,46 +221,42 @@ export const HomePage: React.FC = () => {
               <span>{t('experiences.tag')} — Barchasini ko'rish</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
-          </div>
-        </div>
+          </Item>
+        </Stagger>
       </section>
 
-      {/* 5. About Ziyorat Hotel Section */}
-      <section className="py-24 bg-[#F5F1E8] relative">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10">
+      {/* 4. About Ziyorat Hotel Section */}
+      <section className="min-h-screen flex items-center py-24 lg:pt-28 lg:pb-14 bg-[#F5F1E8] relative">
+        <Stagger className="w-full max-w-7xl mx-auto px-6 sm:px-10" stagger={0.12}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Narrative */}
             <div className="lg:col-span-6 space-y-6">
-              <p className="text-xs uppercase tracking-widest3 text-[#B99A65] font-sans font-semibold">
-                {t('about.tag')}
-              </p>
-              <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#20251F] leading-[1.12]">
-                {t('about.title')}
-              </h2>
-              <p className="text-sm text-[#444C42] leading-relaxed font-light">
-                {t('about.story')}
-              </p>
+              <Item from="right">
+                <p className="text-xs uppercase tracking-widest3 text-[#B99A65] font-sans font-semibold">
+                  {t('about.tag')}
+                </p>
+              </Item>
+              <Item from="right">
+                <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#20251F] leading-[1.12]">
+                  {t('about.title')}
+                </h2>
+              </Item>
+              <Item from="right">
+                <p className="text-sm text-[#444C42] leading-relaxed font-light">
+                  {t('about.story')}
+                </p>
+              </Item>
 
-              <div className="space-y-3 pt-2 text-xs text-[#153D2A] font-medium">
-                <div className="flex items-center gap-2.5">
-                  <CheckCircle className="w-4 h-4 text-[#B99A65]" />
-                  <span>{t('about.bullet1')}</span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <CheckCircle className="w-4 h-4 text-[#B99A65]" />
-                  <span>{t('about.bullet2')}</span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <CheckCircle className="w-4 h-4 text-[#B99A65]" />
-                  <span>{t('about.bullet3')}</span>
-                </div>
-                <div className="flex items-center gap-2.5">
-                  <CheckCircle className="w-4 h-4 text-[#B99A65]" />
-                  <span>{t('about.bullet4')}</span>
-                </div>
-              </div>
+              <Group className="space-y-3 pt-2 text-xs text-[#153D2A] font-medium" stagger={0.1}>
+                {(['bullet1', 'bullet2', 'bullet3', 'bullet4'] as const).map((key) => (
+                  <Item key={key} from="right" distance={24} className="flex items-center gap-2.5">
+                    <CheckCircle className="w-4 h-4 text-[#B99A65]" />
+                    <span>{t(`about.${key}`)}</span>
+                  </Item>
+                ))}
+              </Group>
 
-              <div className="pt-4">
+              <Item from="right" className="pt-4">
                 <Link
                   to={`/${lang}/about`}
                   className="px-6 py-3 bg-[#153D2A] hover:bg-[#0F2F20] text-[#F5F1E8] text-xs font-sans uppercase tracking-widest font-semibold rounded-sm transition-colors inline-flex items-center gap-2"
@@ -248,131 +264,126 @@ export const HomePage: React.FC = () => {
                   <span>Batafsil ma'lumot</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
-              </div>
+              </Item>
             </div>
 
             {/* Right Asymmetrical Images */}
-            <div className="lg:col-span-6 grid grid-cols-2 gap-4">
-              <div className="relative h-80 sm:h-96 rounded-sm overflow-hidden border border-[#B99A65]/30">
+            <Group className="lg:col-span-6 grid grid-cols-2 gap-4" stagger={0.2}>
+              <Item from="up" distance={80} className="relative h-80 sm:h-96 lg:h-[58vh] rounded-sm overflow-hidden border border-[#B99A65]/30">
                 <img
                   src="/hotel/fb082889a68ce49f.webp"
                   alt="Ziyorat Hotel Room"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
-              </div>
-              <div className="relative h-80 sm:h-96 rounded-sm overflow-hidden border border-[#B99A65]/30 mt-8">
+              </Item>
+              <Item from="down" distance={80} className="relative h-80 sm:h-96 lg:h-[58vh] rounded-sm overflow-hidden border border-[#B99A65]/30 mt-8">
                 <img
                   src="/hotel/a7d063c66c24675e.webp"
                   alt="Ziyorat Hotel Spa"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
-              </div>
-            </div>
+              </Item>
+            </Group>
           </div>
-        </div>
+        </Stagger>
       </section>
 
-      {/* 6. Discover Fergana Regional Inspiration */}
-      <section className="py-24 bg-[#EFE9DC] text-[#20251F]">
-        <div className="max-w-7xl mx-auto px-6 sm:px-10">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <p className="text-xs uppercase tracking-widest3 text-[#B99A65] font-sans font-semibold mb-2">
-              {t('discover.tag')}
-            </p>
-            <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#20251F]">
-              {t('discover.title')}
-            </h2>
-            <p className="text-xs sm:text-sm text-[#5C645B] mt-3 font-light leading-relaxed">
-              {t('discover.subtitle')}
-            </p>
+      {/* 5. Discover Fergana Regional Inspiration */}
+      <section className="min-h-screen flex items-center py-24 lg:pt-28 lg:pb-14 bg-[#EFE9DC] text-[#20251F]">
+        <Stagger className="w-full max-w-7xl mx-auto px-6 sm:px-10">
+          <div className="text-center max-w-2xl mx-auto mb-14 lg:mb-10">
+            <Item>
+              <p className="text-xs uppercase tracking-widest3 text-[#B99A65] font-sans font-semibold mb-2">
+                {t('discover.tag')}
+              </p>
+            </Item>
+            <Item>
+              <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#20251F]">
+                {t('discover.title')}
+              </h2>
+            </Item>
+            <Item>
+              <p className="text-xs sm:text-sm text-[#5C645B] mt-3 font-light leading-relaxed">
+                {t('discover.subtitle')}
+              </p>
+            </Item>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white border border-[#B99A65]/20 rounded-sm overflow-hidden">
-              <div className="h-56 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?auto=format&fit=crop&w=800&q=80"
-                  alt="Margilan Silk"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="font-serif text-xl font-normal text-[#20251F] mb-2">
-                  {t('discover.margilan')}
-                </h3>
-                <p className="text-xs text-[#5C645B] font-light leading-relaxed">
-                  {t('discover.margilanDesc')}
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-white border border-[#B99A65]/20 rounded-sm overflow-hidden">
-              <div className="h-56 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80"
-                  alt="Rishtan Ceramics"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="font-serif text-xl font-normal text-[#20251F] mb-2">
-                  {t('discover.rishtan')}
-                </h3>
-                <p className="text-xs text-[#5C645B] font-light leading-relaxed">
-                  {t('discover.rishtanDesc')}
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-white border border-[#B99A65]/20 rounded-sm overflow-hidden">
-              <div className="h-56 overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
-                  alt="Kokand Palace"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="font-serif text-xl font-normal text-[#20251F] mb-2">
-                  {t('discover.kokand')}
-                </h3>
-                <p className="text-xs text-[#5C645B] font-light leading-relaxed">
-                  {t('discover.kokandDesc')}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+          <Group className="grid grid-cols-1 md:grid-cols-3 gap-8" stagger={0.18}>
+            {[
+              {
+                img: 'https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?auto=format&fit=crop&w=800&q=80',
+                alt: 'Margilan Silk',
+                title: t('discover.margilan'),
+                desc: t('discover.margilanDesc'),
+              },
+              {
+                img: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80',
+                alt: 'Rishtan Ceramics',
+                title: t('discover.rishtan'),
+                desc: t('discover.rishtanDesc'),
+              },
+              {
+                img: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80',
+                alt: 'Kokand Palace',
+                title: t('discover.kokand'),
+                desc: t('discover.kokandDesc'),
+              },
+            ].map((place) => (
+              <Item key={place.alt} distance={60} className="bg-white border border-[#B99A65]/20 rounded-sm overflow-hidden">
+                <div className="h-56 lg:h-[30vh] overflow-hidden">
+                  <img
+                    src={place.img}
+                    alt={place.alt}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-serif text-xl font-normal text-[#20251F] mb-2">{place.title}</h3>
+                  <p className="text-xs text-[#5C645B] font-light leading-relaxed">{place.desc}</p>
+                </div>
+              </Item>
+            ))}
+          </Group>
+        </Stagger>
       </section>
 
-      {/* 7. Final Call to Action */}
-      <section className="py-20 bg-[#153D2A] text-[#F5F1E8] text-center relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-6 relative z-10 space-y-6">
-          <p className="text-xs uppercase tracking-widest3 text-[#B99A65] font-sans font-semibold">
-            Ziyorat Hotel Fergana
-          </p>
-          <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#F5F1E8]">
-            Sizni Kutib Qolamiz
-          </h2>
-          <p className="text-xs sm:text-sm text-[#DCECE1] max-w-xl mx-auto font-light leading-relaxed">
-            Unutilmas dam olish yoki muvaffaqiyatli ish safari uchun bugunoq xonani eng yaxshi narxda band qiling.
-          </p>
-          <div className="pt-2">
-            <Link
-              to={`/${lang}/booking`}
-              className="px-8 py-3.5 bg-[#B99A65] hover:bg-[#A4844F] text-[#0F2F20] font-sans font-bold text-xs uppercase tracking-widest rounded-sm transition-all shadow-xl inline-flex items-center gap-2 hover:scale-105"
-            >
-              <span>{t('hero.primaryCta')}</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-    </div>
+      {/* 6. Final Call to Action + Footer */}
+      <div className="min-h-screen flex flex-col bg-[#0F2F20]">
+        <section className="flex-1 flex items-center py-20 lg:pt-28 bg-[#153D2A] text-[#F5F1E8] text-center relative overflow-hidden">
+          <Stagger className="w-full max-w-4xl mx-auto px-6 relative z-10 space-y-6">
+            <Item>
+              <p className="text-xs uppercase tracking-widest3 text-[#B99A65] font-sans font-semibold">
+                Ziyorat Hotel Fergana
+              </p>
+            </Item>
+            <Item>
+              <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#F5F1E8]">
+                Sizni Kutib Qolamiz
+              </h2>
+            </Item>
+            <Item>
+              <p className="text-xs sm:text-sm text-[#DCECE1] max-w-xl mx-auto font-light leading-relaxed">
+                Unutilmas dam olish yoki muvaffaqiyatli ish safari uchun bugunoq xonani eng yaxshi narxda band qiling.
+              </p>
+            </Item>
+            <Item className="pt-2">
+              <Link
+                to={`/${lang}/booking`}
+                className="px-8 py-3.5 bg-[#B99A65] hover:bg-[#A4844F] text-[#0F2F20] font-sans font-bold text-xs uppercase tracking-widest rounded-sm transition-all shadow-xl inline-flex items-center gap-2 hover:scale-105"
+              >
+                <span>{t('hero.primaryCta')}</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </Item>
+          </Stagger>
+        </section>
+        <Footer />
+      </div>
+      </FullPage>
+    </>
   );
 };

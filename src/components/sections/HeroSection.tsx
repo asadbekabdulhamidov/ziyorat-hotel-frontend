@@ -3,6 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useFullPage } from '../fullpage/FullPage';
+import { Stagger, Item } from '../fullpage/Reveal';
 
 const HERO_SLIDES = [
   {
@@ -29,8 +31,9 @@ const HERO_SLIDES = [
 
 const SLIDE_DURATION = 5500; // 5.5 seconds per slide
 
-export const HeroSection: React.FC = () => {
+export const HeroSection: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   const { t } = useTranslation();
+  const { next } = useFullPage();
   const { lang = 'uz' } = useParams<{ lang?: string }>();
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -52,7 +55,7 @@ export const HeroSection: React.FC = () => {
   }, [nextSlide]);
 
   return (
-    <section className="relative min-h-[95vh] flex flex-col justify-between pt-36 pb-12 overflow-hidden bg-[#0F2F20]">
+    <section className="relative min-h-screen flex flex-col justify-between pt-32 lg:pt-28 pb-8 overflow-hidden bg-[#0F2F20]">
       {/* Background Image Slider with Crossfade & Cinematic Motion */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <AnimatePresence mode="sync">
@@ -96,43 +99,33 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Hero Typography & Content */}
-      <div className="relative z-20 max-w-5xl mx-auto px-6 text-center my-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#B99A65]/40 bg-[#0F2F20]/75 backdrop-blur-md mb-6"
-        >
-          <span className="text-[10px] uppercase tracking-widest3 text-[#B99A65] font-sans font-semibold">
-            {t('hero.badge')}
-          </span>
-        </motion.div>
+      <Stagger className="relative z-20 max-w-5xl mx-auto px-6 text-center my-auto" stagger={0.18} delay={0.15}>
+        <Item distance={20}>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#B99A65]/40 bg-[#0F2F20]/75 backdrop-blur-md mb-6">
+            <span className="text-[10px] uppercase tracking-widest3 text-[#B99A65] font-sans font-semibold">
+              {t('hero.badge')}
+            </span>
+          </div>
+        </Item>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.1 }}
-          className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-[#F5F1E8] tracking-tight leading-[1.08] max-w-4xl mx-auto drop-shadow-lg"
+        <Item distance={50} duration={1}>
+        <h1
+          className="font-serif text-4xl sm:text-6xl md:text-7xl [@media(min-width:1024px)_and_(min-height:860px)]:text-8xl font-normal text-[#F5F1E8] tracking-tight leading-[1.08] max-w-4xl mx-auto drop-shadow-lg"
         >
           {t('hero.headline')}
-        </motion.h1>
+        </h1>
+        </Item>
 
-        <motion.p
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+        <Item>
+        <p
           className="text-[#DCECE1] text-sm sm:text-base md:text-lg max-w-2xl mx-auto mt-6 font-light leading-relaxed drop-shadow"
         >
           {t('hero.subheadline')}
-        </motion.p>
+        </p>
+        </Item>
 
         {/* CTA Actions */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-8 flex flex-wrap items-center justify-center gap-4"
-        >
+        <Item className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Link
             to={`/${lang}/booking`}
             className="px-7 py-3.5 bg-[#B99A65] hover:bg-[#A4844F] text-[#0F2F20] font-sans font-bold text-xs uppercase tracking-widest rounded-sm transition-all shadow-xl flex items-center gap-2 hover:scale-105"
@@ -147,11 +140,18 @@ export const HeroSection: React.FC = () => {
           >
             {t('hero.secondaryCta')}
           </Link>
-        </motion.div>
-      </div>
+        </Item>
+
+        {/* Booking search (passed from the page) */}
+        {children && (
+          <Item distance={60} className="mt-10 lg:mt-8 max-w-6xl mx-auto">
+            {children}
+          </Item>
+        )}
+      </Stagger>
 
       {/* Slide Indicators & Scroll Indicator */}
-      <div className="relative z-20 flex flex-col items-center gap-4 mt-6">
+      <div className="relative z-20 flex flex-col items-center gap-3 mt-6">
         {/* Slider Pagination Dots */}
         <div className="flex items-center gap-2.5 bg-black/40 px-3.5 py-1.5 rounded-full border border-white/10 backdrop-blur-sm">
           {HERO_SLIDES.map((_, idx) => (
@@ -169,8 +169,9 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* Scroll indicator */}
-        <a
-          href="#booking-search"
+        <button
+          type="button"
+          onClick={next}
           className="text-[#B99A65]/80 hover:text-[#B99A65] flex flex-col items-center gap-1 transition-colors"
           aria-label={t('hero.scroll')}
         >
@@ -178,7 +179,7 @@ export const HeroSection: React.FC = () => {
             {t('hero.scroll')}
           </span>
           <ChevronDown className="w-4 h-4 animate-bounce text-[#B99A65]" />
-        </a>
+        </button>
       </div>
     </section>
   );

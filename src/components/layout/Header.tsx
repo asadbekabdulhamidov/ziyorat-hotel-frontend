@@ -11,16 +11,27 @@ export const Header: React.FC = () => {
   const navigate = useNavigate();
   const { lang = 'uz' } = useParams<{ lang?: string }>();
 
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrolledByWindow, setScrolledByWindow] = useState(false);
+  // On the full-page home, the window never scrolls — follow the active section instead
+  const [fullpageIndex, setFullpageIndex] = useState<number | null>(null);
+  const isScrolled = fullpageIndex !== null ? fullpageIndex > 0 : scrolledByWindow;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      setScrolledByWindow(window.scrollY > 40);
+    };
+    const handleFullpage = (e: Event) => {
+      const { enabled, index } = (e as CustomEvent<{ enabled: boolean; index: number }>).detail;
+      setFullpageIndex(enabled ? index : null);
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('fullpage:change', handleFullpage);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('fullpage:change', handleFullpage);
+    };
   }, []);
 
   // Sync i18n with route lang param
