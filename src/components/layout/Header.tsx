@@ -75,21 +75,25 @@ export const Header: React.FC = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-[#153D2A]/95 backdrop-blur-md py-3.5 shadow-xl border-b border-[#B99A65]/20 text-[#F5F1E8]'
-          : 'bg-gradient-to-b from-black/70 via-black/40 to-transparent py-5 text-white'
+          ? 'bg-[#153D2A]/95 backdrop-blur-md shadow-xl border-b border-[#B99A65]/20 text-[#F5F1E8]'
+          : 'bg-gradient-to-b from-black/70 via-black/40 to-transparent text-white'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 flex items-center justify-between">
+      <div
+        className={`max-w-[1400px] mx-auto px-5 sm:px-8 xl:px-10 flex items-center justify-between gap-6 transition-all duration-500 ${
+          isScrolled ? 'h-[68px]' : 'h-20'
+        }`}
+      >
         {/* Brand Logo */}
-        <Link to={`/${lang}`} className="flex items-center gap-3 group">
-          <div className="w-10 h-10 border border-[#B99A65]/70 rounded-full flex items-center justify-center text-[#B99A65] font-serif text-xl font-bold bg-[#153D2A]/40 backdrop-blur-sm group-hover:border-[#B99A65] transition-all">
+        <Link to={`/${lang}`} className="flex items-center gap-3 group shrink-0">
+          <div className="w-10 h-10 shrink-0 border border-[#B99A65]/70 rounded-full flex items-center justify-center text-[#B99A65] font-serif text-xl font-bold bg-[#153D2A]/40 backdrop-blur-sm group-hover:border-[#B99A65] transition-all">
             Z
           </div>
           <div className="flex flex-col text-left">
-            <span className="font-serif text-xl sm:text-2xl tracking-widest text-[#F5F1E8] uppercase font-medium">
+            <span className="font-serif text-xl xl:text-[22px] leading-none whitespace-nowrap tracking-[0.16em] text-[#F5F1E8] uppercase font-medium">
               Ziyorat Hotel
             </span>
-            <div className="flex items-center gap-1.5 text-[9px] tracking-widest3 text-[#B99A65] uppercase font-sans">
+            <div className="flex items-center gap-1.5 mt-1.5 text-[9px] leading-none whitespace-nowrap tracking-widest3 text-[#B99A65] uppercase font-sans">
               <span>★★★★</span>
               <span>•</span>
               <span>Fergana</span>
@@ -98,17 +102,17 @@ export const Header: React.FC = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-7">
+        <nav className="hidden xl:flex items-center gap-6 2xl:gap-8">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.to;
             return (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`text-xs uppercase tracking-widest font-sans transition-all py-1 relative ${
+                className={`relative py-2 whitespace-nowrap text-[11px] uppercase tracking-[0.14em] font-sans font-medium transition-colors after:content-[""] after:absolute after:left-0 after:-bottom-0.5 after:h-px after:bg-[#B99A65] after:transition-all after:duration-300 ${
                   isActive
-                    ? 'text-[#B99A65] font-semibold after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-[#B99A65]'
-                    : 'text-[#EFE9DC] hover:text-[#B99A65]'
+                    ? 'text-[#B99A65] after:w-full'
+                    : 'text-[#EFE9DC] hover:text-[#B99A65] after:w-0 hover:after:w-full'
                 }`}
               >
                 {link.label}
@@ -118,21 +122,25 @@ export const Header: React.FC = () => {
         </nav>
 
         {/* Actions: Phone, Language Switcher, Reservation CTA */}
-        <div className="hidden sm:flex items-center gap-5">
+        <div className="hidden sm:flex items-center gap-3 2xl:gap-4 shrink-0">
           {/* Direct Phone */}
           <a
             href={`tel:${HOTEL.phoneRaw}`}
-            className="flex items-center gap-1.5 text-xs text-[#EFE9DC] hover:text-[#B99A65] transition-colors"
+            className="flex items-center gap-2 whitespace-nowrap text-xs text-[#EFE9DC] hover:text-[#B99A65] transition-colors"
+            aria-label={HOTEL.phone}
+            title={HOTEL.phone}
           >
-            <Phone className="w-3.5 h-3.5 text-[#B99A65]" />
-            <span className="font-medium tracking-wide">{HOTEL.phone}</span>
+            <span className="w-9 h-9 2xl:w-auto 2xl:h-auto rounded-full 2xl:rounded-none border border-[#B99A65]/40 2xl:border-0 flex items-center justify-center">
+              <Phone className="w-3.5 h-3.5 text-[#B99A65]" />
+            </span>
+            <span className="hidden 2xl:inline font-medium tracking-wide">{HOTEL.phone}</span>
           </a>
 
           {/* Language Switcher Dropdown */}
           <div className="relative">
             <button
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded border border-[#B99A65]/40 text-xs font-semibold uppercase tracking-wider text-[#F5F1E8] hover:border-[#B99A65] transition-all"
+              className="h-9 flex items-center gap-1.5 px-2.5 rounded border border-[#B99A65]/40 text-xs font-semibold uppercase tracking-wider text-[#F5F1E8] hover:border-[#B99A65] transition-all"
               aria-label="Change language"
             >
               <Globe className="w-3.5 h-3.5 text-[#B99A65]" />
@@ -171,18 +179,18 @@ export const Header: React.FC = () => {
           {/* Reservation CTA Button */}
           <Link
             to={`/${lang}/booking`}
-            className="px-5 py-2.5 bg-[#B99A65] hover:bg-[#A4844F] text-[#0F2F20] font-sans font-bold text-xs uppercase tracking-widest rounded-sm transition-all shadow-md"
+            className="h-9 px-5 inline-flex items-center whitespace-nowrap bg-[#B99A65] hover:bg-[#A4844F] text-[#0F2F20] font-sans font-bold text-[11px] uppercase tracking-[0.14em] rounded-sm transition-colors shadow-md"
           >
             {t('nav.bookNow')}
           </Link>
         </div>
 
         {/* Mobile menu trigger */}
-        <div className="flex items-center gap-3 lg:hidden">
+        <div className="flex items-center gap-3 xl:hidden">
           {/* Quick mobile language toggle */}
           <button
             onClick={() => handleLanguageChange(lang === 'uz' ? 'ru' : lang === 'ru' ? 'en' : lang === 'en' ? 'tr' : 'uz')}
-            className="px-2 py-1 border border-[#B99A65]/40 rounded text-xs text-[#B99A65] font-bold"
+            className="sm:hidden px-2 py-1 border border-[#B99A65]/40 rounded text-xs text-[#B99A65] font-bold"
           >
             {lang.toUpperCase()}
           </button>
@@ -204,7 +212,7 @@ export const Header: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-[#0F2F20] border-b border-[#B99A65]/30 px-6 py-6 overflow-hidden"
+            className="xl:hidden bg-[#0F2F20] border-b border-[#B99A65]/30 px-6 py-6 overflow-hidden"
           >
             <nav className="flex flex-col gap-3.5">
               {navLinks.map((link) => (
