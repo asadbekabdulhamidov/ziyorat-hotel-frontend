@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "home": "Bosh sahifa",
+    "rooms": "Xonalar",
+    "experiences": "Xizmatlar",
+    "about": "Mehmonxona haqida",
+    "discover": "Farg'ona",
+    "contact": "Aloqa",
+    "bookNow": "Xonani band qilish"
+  },
+  "hero": {
+    "badge": "Ziyorat Hotel • Farg'ona ★★★★",
+    "headline": "Farg'ona go'zalligini kashf eting.",
+    "subheadline": "Alohida qulaylik va mehmondo'stlikning samimiy iliqligini his qiling.",
+    "primaryCta": "Xonani band qilish",
+    "secondaryCta": "Xonalarni ko'rish",
+    "scroll": "Pastga o'tish"
+  },
+  "search": {
+    "checkIn": "Kelish sanasi",
+    "checkOut": "Jo'nash sanasi",
+    "guests": "Mehmonlar soni",
+    "findRoom": "Xonani topish",
+    "guestCount_1": "1 mehmon",
+    "guestCount_2": "2 mehmon",
+    "guestCount_3": "3 mehmon",
+    "guestCount_4": "4+ mehmon",
+    "dateError": "Jo'nash sanasi kelish sanasidan keyin bo'lishi kerak."
+  },
+  "featuredRooms": {
+    "tag": "Turar joylar",
+    "title": "Saralangan Xonalar va Lyukslar",
+    "subtitle": "Har bir xonada ehtiyotkorlik bilan tanlangan dizayn, yuqori sifatli to'shaklar va sokinlik.",
+    "viewAll": "Barcha xonalarni ko'rish",
+    "perNight": "1 kecha uchun",
+    "viewDetails": "Batafsil ma'lumot",
+    "bookRoom": "Band qilish",
+    "capacity": "Sig'imi",
+    "size": "Maydoni",
+    "bed": "To'shak"
+  },
+  "experiences": {
+    "tag": "Infratuzilma & Qulayliklar",
+    "title": "Siz Uchun Yaratilgan Xizmatlar",
+    "subtitle": "Farg'ona safari davomida salomatlik, mazali taomlar va to'laqonli dam olish maskani.",
+    "pool": "Hovuz (Suzish havzasi)",
+    "poolDesc": "Yozgi ochiq va qishki yopiq suzish havzalarida tiniq suv va qulay dam olish.",
+    "restaurant": "Ziyorat Restorani",
+    "restaurantDesc": "Milliy farg'ona oshi, yevropa taomlari va har kuni ertalab boy nonushta bufeti.",
+    "hammam": "Turk Hamomi va Fin Saunasi",
+    "hammamDesc": "Haqiqiy sharqona bug' hamomi va tana tetikligi uchun quruq fin saunasi.",
+    "fitness": "Sport Zali",
+    "fitnessDesc": "Sayohat davomida ham faol bo'lishingiz uchun zamonaviy trenajyorlar."
+  },
+  "about": {
+    "tag": "Biz Haqimizda",
+    "title": "Ziyorat Luxury Hotel Tarixi",
+    "subtitle": "Farg'onaning nufuzli maskanida mehmondo'stlik an'analari va zamonaviy hashamat uyg'unligi.",
+    "story": "Ziyorat Hotel — Farg'ona shahrining eng sokin va qulay hududlaridan birida joylashgan 4 yulduzli mehmonxona. Biz xalqaro sayyohlar va ish safari bilan tashrif buyurgan mehmonlarga yuqori darajadagi servis, xavfsizlik va samimiy o'zbek mehmondo'stligini taqdim etamiz.",
+    "bullet1": "Har kuni bepul shved stoli nonushtasi",
+    "bullet2": "Turk hamomi, fin saunasi va basseyn",
+    "bullet3": "Farg'ona aeroportidan 10 daqiqalik qulay masofa",
+    "bullet4": "24/7 qabulxona va xavfsiz avtoturargoh"
+  },
+  "discover": {
+    "tag": "Farg'ona Bo'ylab Sayohat",
+    "title": "Farg'ona Vodiysi Javohirlari",
+    "subtitle": "Qadimiy ipak yo'li shaharlari, hunarmandchilik markazlari va go'zal tabiat.",
+    "margilan": "Marg'ilon — 'Yodgorlik' Ipak Fabrikasi",
+    "margilanDesc": "Ming yillik tabiiy ipak to'qish an'analarini o'z ko'zingiz bilan ko'ring.",
+    "rishtan": "Rishton — Dunyoga Mashhur Kulolchilik",
+    "rishtanDesc": "Moviy va yashil sirlangan kulolchilik ustalari ustaxonalariga sayohat.",
+    "kokand": "Qo'qon — Xudoyorxon O'rdasi",
+    "kokandDesc": "Qo'qon xonligining so'nggi muazzam saroyi va tarixiy me'morchilik.",
+    "ferganaPark": "Al-Farg'oniy Bog'i va Markaziy Xiyobon",
+    "ferganaParkDesc": "Mehmonxonamizdan bir necha daqiqalik masofada joylashgan sokin sayilgoh."
+  },
+  "contact": {
+    "tag": "Bog'lanish",
+    "title": "Manzilimiz va Qabulxona",
+    "subtitle": "Biz bilan to'g'ridan-to'g'ri bog'laning yoki xaritada manzilni ko'ring.",
+    "address": "Manzil",
+    "addressValue": "Farg'ona shahri, Farg'ona viloyati, O'zbekiston",
+    "phone": "Qabulxona (24/7)",
+    "email": "Elektron pochta",
+    "googleMaps": "Google Maps",
+    "yandexMaps": "Yandex Xarita",
+    "name": "Ismingiz",
+    "namePlaceholder": "Masalan: Jasur Aliyev",
+    "phonePlaceholder": "+998 90 123 45 67",
+    "message": "Xabaringiz",
+    "messagePlaceholder": "Savol yoki istaklaringizni yozing...",
+    "sendMessage": "Xabar jo'natish",
+    "sentSuccess": "Rahmat! Xabaringiz qabul qilindi. Tez orada javob beramiz."
+  },
+  "booking": {
+    "title": "Xonani Band Qilish",
+    "subtitle": "Ziyorat Hotelda unutilmas kunlarni o'tkazish uchun sanalarni tanlang.",
+    "step1": "1. Sanalar va Xona",
+    "step2": "2. Mehmon Ma'lumotlari",
+    "step3": "3. Tasdiqlash",
+    "selectedRoom": "Tanlangan xona",
+    "nights": "kecha",
+    "total": "Jami to'lov",
+    "fullName": "To'liq ism-familiya",
+    "guestPhone": "Telefon raqam",
+    "guestEmail": "Email",
+    "arrivalTime": "Kutilayotgan kelish vaqti",
+    "specialRequests": "Maxsus istaklar (ixtiyoriy)",
+    "submitBooking": "Bandlovni tasdiqlash",
+    "demoNotice": "Eslatma: Ushbu veb-sayt frontend namoyishidir. Haqiqiy to'lov yoki karta talab etilmaydi.",
+    "confirmTitle": "Buyurtmangiz Qabul Qilindi!",
+    "confirmDesc": "Rahmat! Bron so'rovingiz qabul qilindi. Administratorimiz tez orada siz bilan bog'lanadi.",
+    "backHome": "Bosh sahifaga qaytish"
+  },
+  "roomsPage": {
+    "title": "Mehmonxona Xonalari",
+    "subtitle": "O'zingizga ma'qul xona toifasini tanlang: standart, lyuks yoki oilaviy xonalar.",
+    "all": "Barcha xonalar",
+    "deluxe": "Deluxe",
+    "suite": "Lyuks",
+    "family": "Oilaviy",
+    "filterGuest": "Mehmonlar",
+    "filterPrice": "Narx bo'yicha",
+    "priceAsc": "Arzondan qimmatga",
+    "priceDesc": "Qimmatdan arzonga",
+    "noRooms": "Tanlangan filtrlar bo'yicha xonalar topilmadi."
+  },
+  "roomDetails": {
+    "back": "Barcha xonalarga qaytish",
+    "specs": "Xona parametrlari",
+    "amenities": "Xonadagi barcha qulayliklar",
+    "related": "O'xshash Boshqa Xonalar",
+    "bookThis": "Ushbu xonani band qilish"
+  },
+  "footer": {
+    "aboutText": "Ziyorat Hotel — Farg'ona markazida zamonaviy qulaylik va an'anaviy mehmondo'stlikning oliy namunasi.",
+    "rights": "Barcha huquqlar himoyalangan.",
+    "checkTimes": "Kirish: 14:00 | Chiqish: 12:00"
+  }
+}

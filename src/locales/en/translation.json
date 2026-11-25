@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "home": "Home",
+    "rooms": "Rooms & Suites",
+    "experiences": "Experiences",
+    "about": "About",
+    "discover": "Discover Fergana",
+    "contact": "Contact",
+    "bookNow": "Book a Room"
+  },
+  "hero": {
+    "badge": "Ziyorat Hotel • Fergana ★★★★",
+    "headline": "Discover the beauty of Fergana.",
+    "subheadline": "Experience exceptional comfort and the warmth of Uzbek hospitality.",
+    "primaryCta": "Book Your Stay",
+    "secondaryCta": "Explore Rooms",
+    "scroll": "Scroll to explore"
+  },
+  "search": {
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "guests": "Guests",
+    "findRoom": "Find a Room",
+    "guestCount_1": "1 Guest",
+    "guestCount_2": "2 Guests",
+    "guestCount_3": "3 Guests",
+    "guestCount_4": "4+ Guests",
+    "dateError": "Check-out date must be after check-in date."
+  },
+  "featuredRooms": {
+    "tag": "Accommodations",
+    "title": "Our Exclusive Rooms & Suites",
+    "subtitle": "Each room features custom-designed furnishings, plush orthopedic bedding, and tranquil ambiance.",
+    "viewAll": "View All Rooms",
+    "perNight": "per night",
+    "viewDetails": "View Details",
+    "bookRoom": "Book Now",
+    "capacity": "Capacity",
+    "size": "Size",
+    "bed": "Bed"
+  },
+  "experiences": {
+    "tag": "Amenities & Wellness",
+    "title": "Curated Hotel Experiences",
+    "subtitle": "Everything you need for revitalization, fine dining, and peaceful relaxation in Fergana.",
+    "pool": "Swimming Pool",
+    "poolDesc": "Pristine heated indoor and seasonal outdoor pools surrounded by peaceful leisure seating.",
+    "restaurant": "Ziyorat Restaurant",
+    "restaurantDesc": "Authentic Fergana culinary treasures, international cuisine, and a sumptuous daily breakfast buffet.",
+    "hammam": "Turkish Hammam & Finnish Sauna",
+    "hammamDesc": "Authentic steam therapy and restorative dry sauna for thorough wellness and stress relief.",
+    "fitness": "Fitness Center",
+    "fitnessDesc": "Modern cardio and resistance equipment to keep you invigorated throughout your stay."
+  },
+  "about": {
+    "tag": "Our Story",
+    "title": "The Essence of Ziyorat Hotel",
+    "subtitle": "A sanctuary where ancient Silk Road warmth meets modern boutique luxury.",
+    "story": "Ziyorat Hotel is a distinguished 4-star boutique hotel situated in a quiet, prestigious quarter of Fergana. We offer international travelers and business guests uncompromising standards of safety, bespoke service, and authentic Uzbek hospitality.",
+    "bullet1": "Complimentary daily gourmet breakfast buffet",
+    "bullet2": "Turkish hammam, Finnish sauna, and dual pools",
+    "bullet3": "10 minutes from Fergana International Airport",
+    "bullet4": "24/7 reception desk and private secured parking"
+  },
+  "discover": {
+    "tag": "Regional Inspiration",
+    "title": "Treasures of the Fergana Valley",
+    "subtitle": "Ancient craftsmanship, legendary silk factories, and historic khanate palaces.",
+    "margilan": "Margilan — Yodgorlik Silk Factory",
+    "margilanDesc": "Witness firsthand the centuries-old art of handwoven ikat silk production.",
+    "rishtan": "Rishtan — World-Renowned Ceramics",
+    "rishtanDesc": "Explore vibrant studios of master potters crafting iconic cobalt and turquoise glazes.",
+    "kokand": "Kokand — Palace of Khudayar Khan",
+    "kokandDesc": "The magnificent 19th-century royal palace and architectural jewel of the Kokand Khanate.",
+    "ferganaPark": "Al-Farghani Central Park",
+    "ferganaParkDesc": "A leafy, peaceful promenade and park just minutes away from our doors."
+  },
+  "contact": {
+    "tag": "Get in Touch",
+    "title": "Location & Concierge",
+    "subtitle": "Connect directly with our 24/7 reception or navigate via your preferred map.",
+    "address": "Address",
+    "addressValue": "Fergana City, Fergana Region, Uzbekistan",
+    "phone": "Concierge (24/7)",
+    "email": "Email Address",
+    "googleMaps": "Google Maps",
+    "yandexMaps": "Yandex Maps",
+    "name": "Your Name",
+    "namePlaceholder": "e.g. John Smith",
+    "phonePlaceholder": "+1 555 123 4567",
+    "message": "Message",
+    "messagePlaceholder": "Questions about reservation, airport transfer...",
+    "sendMessage": "Send Message",
+    "sentSuccess": "Thank you! Your message has been received. Our team will contact you promptly."
+  },
+  "booking": {
+    "title": "Reserve Your Stay",
+    "subtitle": "Select your dates and preferred room at Ziyorat Hotel Fergana.",
+    "step1": "1. Dates & Room",
+    "step2": "2. Guest Details",
+    "step3": "3. Confirmation",
+    "selectedRoom": "Selected Room",
+    "nights": "nights",
+    "total": "Estimated Total",
+    "fullName": "Full Name",
+    "guestPhone": "Phone Number",
+    "guestEmail": "Email Address",
+    "arrivalTime": "Estimated Arrival Time",
+    "specialRequests": "Special Requests (Optional)",
+    "submitBooking": "Confirm Reservation",
+    "demoNotice": "Notice: This website is a frontend booking demonstration. No credit card is required.",
+    "confirmTitle": "Reservation Received!",
+    "confirmDesc": "Thank you! Your booking request has been registered. Our reception team will reach out to confirm your stay details.",
+    "backHome": "Return to Homepage"
+  },
+  "roomsPage": {
+    "title": "Rooms & Luxury Suites",
+    "subtitle": "Find the perfect space for your journey: deluxe twins, spacious suites, and family layouts.",
+    "all": "All Rooms",
+    "deluxe": "Deluxe",
+    "suite": "Suites",
+    "family": "Family",
+    "filterGuest": "Guests",
+    "filterPrice": "Sort by Price",
+    "priceAsc": "Price: Low to High",
+    "priceDesc": "Price: High to Low",
+    "noRooms": "No rooms match the selected filters."
+  },
+  "roomDetails": {
+    "back": "Back to all rooms",
+    "specs": "Room Specifications",
+    "amenities": "All Room Amenities",
+    "related": "Other Recommended Rooms",
+    "bookThis": "Book This Room"
+  },
+  "footer": {
+    "aboutText": "Ziyorat Hotel — Embodying refined comfort and authentic hospitality in the heart of Fergana.",
+    "rights": "All rights reserved.",
+    "checkTimes": "Check-in: 14:00 | Check-out: 12:00"
+  }
+}

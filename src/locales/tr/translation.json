@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "rooms": "Odalar",
+    "experiences": "Hizmetler",
+    "about": "Otelimiz",
+    "discover": "Fergana",
+    "contact": "İletişim",
+    "bookNow": "Rezervasyon Yap"
+  },
+  "hero": {
+    "badge": "Ziyorat Hotel • Fergana ★★★★",
+    "headline": "Fergana'nın güzelliğini keşfedin.",
+    "subheadline": "Benzersiz konforu ve Özbek misafirperverliğinin sıcaklığını yaşayın.",
+    "primaryCta": "Oda Ayırtın",
+    "secondaryCta": "Odaları İnceleyin",
+    "scroll": "Aşağı kaydırın"
+  },
+  "search": {
+    "checkIn": "Giriş Tarihi",
+    "checkOut": "Çıkış Tarihi",
+    "guests": "Misafir Sayısı",
+    "findRoom": "Oda Bul",
+    "guestCount_1": "1 Misafir",
+    "guestCount_2": "2 Misafir",
+    "guestCount_3": "3 Misafir",
+    "guestCount_4": "4+ Misafir",
+    "dateError": "Çıkış tarihi giriş tarihinden sonra olmalıdır."
+  },
+  "featuredRooms": {
+    "tag": "Konaklama",
+    "title": "Seçkin Oda ve Süitlerimiz",
+    "subtitle": "Her odada özenle tasarlanmış iç mekan, ortopedik yataklar ve huzurlu bir atmosfer.",
+    "viewAll": "Tüm Odaları Gör",
+    "perNight": "gecelik",
+    "viewDetails": "Detaylar",
+    "bookRoom": "Rezerve Et",
+    "capacity": "Kapasite",
+    "size": "Alan",
+    "bed": "Yatak"
+  },
+  "experiences": {
+    "tag": "Olanaklar & Hizmetler",
+    "title": "Sizin İçin Tasarlanan Deneyimler",
+    "subtitle": "Fergana seyahatinizde dinlenme, lezzet ve huzur dolu anlar için her şey düşünüldü.",
+    "pool": "Yüzme Havuzu (Açık / Kapalı)",
+    "poolDesc": "Dört mevsim ideal su sıcaklığına sahip kapalı havuz ve yazlık açık yüzme havuzu.",
+    "restaurant": "Ziyorat Restoran",
+    "restaurantDesc": "Geleneksel Fergana pilavı, Türk ve dünya mutfağı lezzetleri ile zengin açık büfe kahvaltı.",
+    "hammam": "Türk Hamamı ve Fin Saunası",
+    "hammamDesc": "Geleneksel buhar banyosu ve kuru Fin saunası ile tam vücut dinlenmesi ve arınma.",
+    "fitness": "Fitness Salonu",
+    "fitnessDesc": "Seyahatiniz süresince formunuzu koruyabileceğiniz modern kardiyo ve ağırlık aletleri."
+  },
+  "about": {
+    "tag": "Hakkımızda",
+    "title": "Ziyorat Luxury Hotel Hikayesi",
+    "subtitle": "Tarihi İpek Yolu misafirperverliği ile modern butik lüksün kusursuz uyumu.",
+    "story": "Ziyorat Hotel, Fergana'nın en nezih ve sakin semtlerinden birinde yer alan 4 yıldızlı seçkin bir oteldir. Uluslararası konuklarımıza ve iş seyahatindeki misafirlerimize yüksek güvenlik, kusursuz servis ve samimi Özbek konukseverliği sunuyoruz.",
+    "bullet1": "Her sabah ücretsiz zengin açık büfe kahvaltı",
+    "bullet2": "Geleneksel Türk hamamı, Fin saunası ve havuz",
+    "bullet3": "Fergana Uluslararası Havalimanı'na sadece 10 dakika",
+    "bullet4": "24 saat açık resepsiyon ve güvenli özel otopark"
+  },
+  "discover": {
+    "tag": "Bölgesel Keşif",
+    "title": "Fergana Vadisi'nin Hazineleri",
+    "subtitle": "Kadim İpek Yolu durakları, usta ellerden çıkan el sanatları ve tarihi saraylar.",
+    "margilan": "Margilan — 'Yodgorlik' İpek Fabrikası",
+    "margilanDesc": "Yüzyıllık geleneksel el dokuması ipek ve ikat üretimini yerinde deneyimleyin.",
+    "rishtan": "Rişton — Dünyaca Ünlü Seramik Sanatı",
+    "rishtanDesc": "Efsanevi mavi ve turkuaz sırlı çömlek ustalarının atölyelerini keşfedin.",
+    "kokand": "Hokand — Hudayar Han Sarayı",
+    "kokandDesc": "Hokand Hanlığı'nın son hükümdarlık sarayı ve görkemli tarihi mimarisi.",
+    "ferganaPark": "El-Fergani Merkez Parkı",
+    "ferganaParkDesc": "Otelimize birkaç dakikalık yürüme mesafesinde sakin ve yemyeşil gezi parkı."
+  },
+  "contact": {
+    "tag": "İletişim",
+    "title": "Adres ve Resepsiyon",
+    "subtitle": "Doğrudan resepsiyonumuzla iletişime geçin veya harita üzerinden yol tarifi alın.",
+    "address": "Adres",
+    "addressValue": "Fergana Şehri, Fergana Bölgesi, Özbekistan",
+    "phone": "Resepsiyon (24/7)",
+    "email": "E-posta",
+    "googleMaps": "Google Haritalar",
+    "yandexMaps": "Yandex Haritalar",
+    "name": "Adınız ve Soyadınız",
+    "namePlaceholder": "Örn: Mehmet Yılmaz",
+    "phonePlaceholder": "+998 90 123 45 67",
+    "message": "Mesajınız",
+    "messagePlaceholder": "Rezervasyon veya transfer sorularınız...",
+    "sendMessage": "Mesajı Gönder",
+    "sentSuccess": "Teşekkürler! Mesajınız alındı. En kısa sürede sizinle iletişime geçeceğiz."
+  },
+  "booking": {
+    "title": "Oda Rezervasyonu",
+    "subtitle": "Ziyorat Hotel Fergana'da konaklamanız için tarihleri seçin.",
+    "step1": "1. Tarihler ve Oda",
+    "step2": "2. Misafir Bilgileri",
+    "step3": "3. Onay",
+    "selectedRoom": "Seçilen Oda",
+    "nights": "gece",
+    "total": "Tahmini Toplam",
+    "fullName": "Ad Soyad",
+    "guestPhone": "Telefon Numarası",
+    "guestEmail": "E-posta Adresi",
+    "arrivalTime": "Tahmini Giriş Saati",
+    "specialRequests": "Özel İstekler (Opsiyonel)",
+    "submitBooking": "Rezervasyonu Onayla",
+    "demoNotice": "Not: Bu web sitesi ön yüz rezervasyon simülasyonudur. Kredi kartı gerekmez.",
+    "confirmTitle": "Rezervasyon Talebiniz Alındı!",
+    "confirmDesc": "Teşekkür ederiz! Rezervasyon talebiniz başarıyla kaydedildi. Resepsiyonumuz detayları teyit etmek için sizinle iletişime geçecektir.",
+    "backHome": "Ana Sayfaya Dön"
+  },
+  "roomsPage": {
+    "title": "Otel Odaları ve Süitler",
+    "subtitle": "Konaklama tercihinize uygun odayı seçin: delüks, geniş süit veya aile odaları.",
+    "all": "Tüm Odalar",
+    "deluxe": "Deluxe",
+    "suite": "Süitler",
+    "family": "Aile Odası",
+    "filterGuest": "Misafir Sayısı",
+    "filterPrice": "Fiyata Göre Sırala",
+    "priceAsc": "Önce En Uygun",
+    "priceDesc": "Önce En Yüksek",
+    "noRooms": "Seçilen kriterlere uygun oda bulunamadı."
+  },
+  "roomDetails": {
+    "back": "Tüm odalara dön",
+    "specs": "Oda Özellikleri",
+    "amenities": "Odadaki Tüm Olanaklar",
+    "related": "Önerilen Diğer Odalar",
+    "bookThis": "Bu Odayı Rezerve Et"
+  },
+  "footer": {
+    "aboutText": "Ziyorat Hotel — Fergana'nın merkezinde rafine konfor ve geleneksel misafirperverliğin simgesi.",
+    "rights": "Tüm hakları saklıdır.",
+    "checkTimes": "Giriş: 14:00 | Çıkış: 12:00"
+  }
+}
