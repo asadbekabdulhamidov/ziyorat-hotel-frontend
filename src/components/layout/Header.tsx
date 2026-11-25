@@ -67,7 +67,6 @@ export const Header: React.FC = () => {
     { to: `/${lang}/rooms`, label: t('nav.rooms') },
     { to: `/${lang}/experiences`, label: t('nav.experiences') },
     { to: `/${lang}/about`, label: t('nav.about') },
-    { to: `/${lang}/discover`, label: t('nav.discover') },
     { to: `/${lang}/contact`, label: t('nav.contact') },
   ];
 
@@ -91,7 +90,7 @@ export const Header: React.FC = () => {
           </div>
           <div className="flex flex-col text-left">
             <span className="font-serif text-xl xl:text-[22px] leading-none whitespace-nowrap tracking-[0.16em] text-[#F5F1E8] uppercase font-medium">
-              Ziyorat Hotel
+              Ziyorat
             </span>
             <div className="flex items-center gap-1.5 mt-1.5 text-[9px] leading-none whitespace-nowrap tracking-widest3 text-[#B99A65] uppercase font-sans">
               <span>★★★★</span>

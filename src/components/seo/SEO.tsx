@@ -27,7 +27,8 @@ export const SEO: React.FC<SEOProps> = ({
     <Helmet>
       {/* Primary HTML & Title */}
       <html lang={lang} />
-      <title>{title ? `${title} | Ziyorat Hotel Fergana` : 'Ziyorat Hotel — Luxury Boutique Hotel in Fergana'}</title>
+      {/* Tab title is always the brand name, in every language */}
+      <title>Ziyorat</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
 
@@ -44,7 +45,7 @@ export const SEO: React.FC<SEOProps> = ({
 
       {/* Open Graph */}
       <meta property="og:type" content="hotel" />
-      <meta property="og:site_name" content="Ziyorat Hotel Fergana" />
+      <meta property="og:site_name" content="Ziyorat" />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

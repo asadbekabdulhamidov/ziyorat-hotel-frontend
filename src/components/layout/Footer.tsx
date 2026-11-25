@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
               </div>
               <div>
                 <span className="font-serif text-2xl tracking-widest text-[#F5F1E8] uppercase font-medium">
-                  Ziyorat Hotel
+                  Ziyorat
                 </span>
                 <span className="text-[10px] text-[#B99A65] block tracking-widest3 uppercase">
                   ★★★★ • Fergana, Uzbekistan
@@ -74,11 +74,6 @@ export const Footer: React.FC = () => {
               <li>
                 <Link to={`/${lang}/about`} className="hover:text-[#B99A65] transition-colors">
                   {t('nav.about')}
-                </Link>
-              </li>
-              <li>
-                <Link to={`/${lang}/discover`} className="hover:text-[#B99A65] transition-colors">
-                  {t('nav.discover')}
                 </Link>
               </li>
               <li>
