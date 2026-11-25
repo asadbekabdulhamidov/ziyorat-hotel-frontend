@@ -63,6 +63,10 @@ function useMediaQuery(query: string) {
   return matches;
 }
 
+/** Popovers, calendars etc. marked with data-fullpage-ignore handle their own wheel/keys */
+const isIgnoredTarget = (el: EventTarget | null) =>
+  el instanceof Element && !!el.closest('[data-fullpage-ignore]');
+
 const isTypingTarget = (el: EventTarget | null) => {
   if (!(el instanceof HTMLElement)) return false;
   const tag = el.tagName;
@@ -153,6 +157,7 @@ export const FullPage: React.FC<FullPageProps> = ({ children, labels = [] }) => 
     if (!enabled) return;
 
     const onWheel = (e: WheelEvent) => {
+      if (isIgnoredTarget(e.target)) return;
       if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
       const dir: 1 | -1 = e.deltaY > 0 ? 1 : -1;
 
@@ -173,7 +178,7 @@ export const FullPage: React.FC<FullPageProps> = ({ children, labels = [] }) => 
     };
 
     const onKey = (e: KeyboardEvent) => {
-      if (isTypingTarget(e.target)) return;
+      if (isTypingTarget(e.target) || isIgnoredTarget(e.target)) return;
       let dir: 1 | -1 | 0 = 0;
       if (['ArrowDown', 'PageDown'].includes(e.key) || (e.key === ' ' && !e.shiftKey)) dir = 1;
       if (['ArrowUp', 'PageUp'].includes(e.key) || (e.key === ' ' && e.shiftKey)) dir = -1;

@@ -25,7 +25,20 @@
     "guestCount_2": "2 Misafir",
     "guestCount_3": "3 Misafir",
     "guestCount_4": "4+ Misafir",
-    "dateError": "Çıkış tarihi giriş tarihinden sonra olmalıdır."
+    "dateError": "Çıkış tarihi giriş tarihinden sonra olmalıdır.",
+    "adults": "Yetişkin",
+    "adultsHint": "13 yaş ve üzeri",
+    "children": "Çocuk",
+    "childrenHint": "0–12 yaş",
+    "done": "Tamam",
+    "adultsShort": "yetişkin",
+    "childrenShort": "çocuk",
+    "selectCheckin": "Giriş tarihini seçin",
+    "selectCheckout": "Çıkış tarihini seçin",
+    "guestTotal_one": "{{count}} misafir",
+    "guestTotal_other": "{{count}} misafir",
+    "nights_one": "{{count}} gece",
+    "nights_other": "{{count}} gece"
   },
   "featuredRooms": {
     "tag": "Konaklama",

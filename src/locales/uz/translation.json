@@ -25,7 +25,20 @@
     "guestCount_2": "2 mehmon",
     "guestCount_3": "3 mehmon",
     "guestCount_4": "4+ mehmon",
-    "dateError": "Jo'nash sanasi kelish sanasidan keyin bo'lishi kerak."
+    "dateError": "Jo'nash sanasi kelish sanasidan keyin bo'lishi kerak.",
+    "adults": "Kattalar",
+    "adultsHint": "13 yosh va undan katta",
+    "children": "Bolalar",
+    "childrenHint": "0–12 yosh",
+    "done": "Tayyor",
+    "adultsShort": "katta",
+    "childrenShort": "bola",
+    "selectCheckin": "Kelish sanasini tanlang",
+    "selectCheckout": "Jo'nash sanasini tanlang",
+    "guestTotal_one": "{{count}} mehmon",
+    "guestTotal_other": "{{count}} mehmon",
+    "nights_one": "{{count}} kecha",
+    "nights_other": "{{count}} kecha"
   },
   "featuredRooms": {
     "tag": "Turar joylar",

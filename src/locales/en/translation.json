@@ -25,7 +25,20 @@
     "guestCount_2": "2 Guests",
     "guestCount_3": "3 Guests",
     "guestCount_4": "4+ Guests",
-    "dateError": "Check-out date must be after check-in date."
+    "dateError": "Check-out date must be after check-in date.",
+    "adults": "Adults",
+    "adultsHint": "Ages 13 or above",
+    "children": "Children",
+    "childrenHint": "Ages 0–12",
+    "done": "Done",
+    "adultsShort": "adults",
+    "childrenShort": "children",
+    "selectCheckin": "Select check-in date",
+    "selectCheckout": "Select check-out date",
+    "guestTotal_one": "{{count}} guest",
+    "guestTotal_other": "{{count}} guests",
+    "nights_one": "{{count}} night",
+    "nights_other": "{{count}} nights"
   },
   "featuredRooms": {
     "tag": "Accommodations",

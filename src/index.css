@@ -42,6 +42,86 @@
   display: none;
 }
 
+/* ---------- Booking calendar (react-day-picker) ---------- */
+.zh-cal.rdp-root {
+  --rdp-accent-color: #B99A65;
+  --rdp-accent-background-color: rgba(185, 154, 101, 0.16);
+  --rdp-day-height: 42px;
+  --rdp-day-width: 42px;
+  --rdp-day_button-height: 40px;
+  --rdp-day_button-width: 40px;
+  --rdp-day_button-border-radius: 2px;
+  --rdp-selected-border: 1px solid #B99A65;
+  --rdp-today-color: #D6C097;
+  --rdp-months-gap: 2.5rem;
+  --rdp-disabled-opacity: 0.25;
+  --rdp-range_start-color: #0F2F20;
+  --rdp-range_end-color: #0F2F20;
+  --rdp-range_middle-color: #F5F1E8;
+  --rdp-nav-height: 2.5rem;
+  --rdp-weekday-opacity: 1;
+  font-family: 'Manrope', system-ui, sans-serif;
+  font-size: 13px;
+  color: #F5F1E8;
+}
+.zh-cal .rdp-caption_label {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 21px;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+}
+.zh-cal .rdp-weekday {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(185, 154, 101, 0.75);
+}
+.zh-cal .rdp-chevron {
+  fill: #B99A65;
+  width: 14px;
+  height: 14px;
+}
+.zh-cal .rdp-button_previous,
+.zh-cal .rdp-button_next {
+  border-radius: 999px;
+  border: 1px solid rgba(185, 154, 101, 0.35);
+  width: 2rem;
+  height: 2rem;
+  transition: background-color 0.2s;
+}
+.zh-cal .rdp-button_previous:hover:not(:disabled),
+.zh-cal .rdp-button_next:hover:not(:disabled) {
+  background: rgba(185, 154, 101, 0.15);
+}
+.zh-cal .rdp-day_button {
+  transition: background-color 0.15s, color 0.15s;
+}
+.zh-cal .rdp-day:not(.rdp-disabled):not(.rdp-selected) .rdp-day_button:hover {
+  background: rgba(185, 154, 101, 0.18);
+  color: #F5F1E8;
+}
+.zh-cal .rdp-today:not(.rdp-selected) .rdp-day_button {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.zh-cal .rdp-range_start .rdp-day_button,
+.zh-cal .rdp-range_end .rdp-day_button {
+  font-weight: 700;
+}
+.zh-cal .rdp-preview {
+  background: rgba(185, 154, 101, 0.1);
+}
+.zh-popover {
+  animation: zh-pop-in 0.18s ease-out;
+}
+@keyframes zh-pop-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* Reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
