@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import margilonImg from '../assets/images/margilon city.jpg';
+import rishtonImg from '../assets/images/rishton.jpg';
+import qoqonImg from '../assets/images/qoqon.jpg';
 import { ZIYORAT_ROOMS } from '../data/hotelData';
 import { SEO } from '../components/seo/SEO';
 import { HeroSection } from '../components/sections/HeroSection';
@@ -314,19 +317,19 @@ export const HomePage: React.FC = () => {
           <Group className="grid grid-cols-1 md:grid-cols-3 gap-8" stagger={0.18}>
             {[
               {
-                img: 'https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?auto=format&fit=crop&w=800&q=80',
+                img: margilonImg,
                 alt: 'Margilan Silk',
                 title: t('discover.margilan'),
                 desc: t('discover.margilanDesc'),
               },
               {
-                img: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80',
+                img: rishtonImg,
                 alt: 'Rishtan Ceramics',
                 title: t('discover.rishtan'),
                 desc: t('discover.rishtanDesc'),
               },
               {
-                img: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80',
+                img: qoqonImg,
                 alt: 'Kokand Palace',
                 title: t('discover.kokand'),
                 desc: t('discover.kokandDesc'),

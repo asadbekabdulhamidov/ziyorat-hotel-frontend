@@ -1,6 +1,9 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import margilonImg from '../assets/images/margilon city.jpg';
+import rishtonImg from '../assets/images/rishton.jpg';
+import qoqonImg from '../assets/images/qoqon.jpg';
 import { SEO } from '../components/seo/SEO';
 import { HOTEL } from '../data/hotelData';
 import { MapPin, Compass, Phone, ArrowRight } from 'lucide-react';
@@ -17,7 +20,7 @@ export const DiscoverPage: React.FC = () => {
       subtitle: "Qadimiy ipakchilik va tabiiy atlas to'qish beshigi",
       desc: "Marg'ilon shahri ming yildan ortiq vaqtdan beri tabiiy ipak va xonatlas ishlab chiqarish markazi hisoblanadi. 'Yodgorlik' fabrikasida ipak qurtidan tortib qo'lda to'qilgan tayyor ipak matolarigacha bo'lgan an'anaviy jarayonni o'z ko'zingiz bilan ko'rishingiz mumkin.",
       distance: "Mehmonxonadan taxminan 15 km (20 daqiqa)",
-      image: 'https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?auto=format&fit=crop&w=1200&q=80',
+      image: margilonImg,
     },
     {
       id: 'rishtan',
@@ -25,7 +28,7 @@ export const DiscoverPage: React.FC = () => {
       subtitle: "Nafis moviy va zangori sirlangan kulolchilik san'ati",
       desc: "Rishton kulollari tayyorlagan lagan va piyolalar butun jahonga mashhur. Mahalliy qizil loy va 'ishqor' o'simligi kuli asosida tayyorlanadigan tabiiy sirlar asrlar davomida o'z jilosini yo'qotmaydi. Rishtondagi mashhur ustalar ustaxonasida master-klasslarda qatnashish mumkin.",
       distance: "Mehmonxonadan taxminan 45 km (45 daqiqa)",
-      image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80',
+      image: rishtonImg,
     },
     {
       id: 'kokand',
@@ -33,7 +36,7 @@ export const DiscoverPage: React.FC = () => {
       subtitle: "Qo'qon xonligining muazzam saroy majmuasi",
       desc: "1871-yilda qurib bitkazilgan Xudoyorxon saroyi sharq me'morchiligining betakror durdonasidir. Rang-barang koshinlar, o'ymakor yog'och ustunlar va qadimiy xonlik tarixi bilan tanishish uchun ajoyib maskan.",
       distance: "Mehmonxonadan taxminan 85 km (1 soat 15 daqiqa)",
-      image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80',
+      image: qoqonImg,
     },
     {
       id: 'fergana-park',
